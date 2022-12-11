@@ -1,0 +1,20 @@
+#!/bin/bash
+
+pip3 install -r /app/requirements.txt
+pip3 install -r /app/requirements-tests.txt
+
+# Manually create a startup wrapper
+cat <<EOF >/usr/local/bin/fredlock
+#!/usr/local/bin/python
+# -*- coding: utf-8 -*-
+import re
+import sys
+from fredlock.cli import cli
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
+    sys.exit(cli())
+EOF
+chmod 755 /usr/local/bin/fredlock
+
+cd /app
+exec bash -l

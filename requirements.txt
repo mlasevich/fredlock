@@ -1,0 +1,5 @@
+# Requirements
+redis >= 4.3.5
+pottery >= 3.0.0
+click >= 8.1.3
+pyyaml >= 6.0

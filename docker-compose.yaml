@@ -1,0 +1,20 @@
+#
+# Testing docker-compose file
+#
+version: "3"
+
+services:
+  tester:
+    image: python:3.9
+    links:
+      - redis
+    volumes:
+      - ./:/app
+    command: /app/testing/tester.startup
+    environment:
+      - PYTHONPATH=/app/src
+      - REDIS_HOST=redis
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
