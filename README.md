@@ -1,9 +1,9 @@
-[![Build Status](https://travis-ci.org/mlasevich/fredlock.svg?branch=master)](https://travis-ci.org/mlasevich/PyRSMQ)
-[![Coverage Status](https://coveralls.io/repos/github/mlasevich/fredlock/badge.svg?branch=master)](https://coveralls.io/github/mlasevich/PyRSMQ?branch=master)
+[![Build Status](https://travis-ci.org/mlasevich/fredlock.svg?branch=master)](https://travis-ci.org/mlasevich/fredlock)
+[![Coverage Status](https://coveralls.io/repos/github/mlasevich/fredlock/badge.svg?branch=master)](https://coveralls.io/github/mlasevich/fredlock?branch=main)
 [![PyPI version](https://badge.fury.io/py/fredlock.svg)](https://badge.fury.io/py/fredlock)
 
 ![FRedLock](docs/fredlock-logo-sm.png)
-# `fredlock` - Redis RedLock based distributed log tool 
+# fredlock - Redis RedLock based distributed log tool 
 
 fredlock distributed locking utility
 
@@ -15,7 +15,7 @@ instances will be running at the same time.
 fredlock requires a shared Redis instance to provide locking
 
 
-## `fredlock` Release Notes
+## fredlock Release Notes
 
 * 0.1.0 - Initial version
   * Features
