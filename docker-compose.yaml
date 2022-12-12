@@ -4,8 +4,9 @@
 version: "3"
 
 services:
-  tester:
-    image: python:3.9
+
+  tester-3-6: &tester36
+    image: python:3.6
     links:
       - redis
     volumes:
@@ -14,6 +15,39 @@ services:
     environment:
       - PYTHONPATH=/app/src
       - REDIS_HOST=redis
+    profiles:
+      - tester-36
+
+  tester-3-7:
+    <<: *tester36
+    image: python:3.7
+    profiles:
+      - tester-37
+
+  tester-3-8:
+    <<: *tester36
+    image: python:3.8
+    profiles:
+      - tester-38
+
+  tester-3-9:
+    <<: *tester36
+    image: python:3.9
+    profiles:
+      - tester-39
+
+  tester-3-10:
+    <<: *tester36
+    image: python:3.10
+    profiles:
+      - tester-310
+
+  tester-3-11:
+    <<: *tester36
+    image: python:3.11
+    profiles:
+      - tester-311
+
   redis:
     image: redis:latest
     ports:

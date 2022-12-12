@@ -7,10 +7,10 @@ from fredlock.fredlock import FRedLock
 def run(config):
     """ main run """
     app = FRedLock(config)
-    app.run()
+    return app.run()
 
 
 def check(config):
     """ Check if the  """
     app = FRedLock(config)
-    app.check(locked="Locked", available="Available")
+    return app.check(locked="Locked", available="Available")

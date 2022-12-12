@@ -6,6 +6,7 @@ to env variables
 
 """
 import logging
+import sys
 from dataclasses import asdict
 
 import click
@@ -17,7 +18,8 @@ from .fredlock import Config
 pass_config = click.make_pass_decorator(Config, ensure=True)
 
 opt_args = dict(show_envvar=True)
-FORMAT = "%(module)s:%(levelname)1.1s: :%(message)s"
+FORMAT_LEVEL = "%(module)s:%(levelname)1.1s: %(message)s"
+FORMAT = "%(module)s: %(message)s"
 
 root_logger = logging.getLogger()
 pkg_logger = logging.getLogger('fredlock')
@@ -99,7 +101,7 @@ def run(config, cmd, cmd_args, **kwargs):
     config.update(**kwargs)
     config.configure()
     #click.echo(f"Running {config.name} command: {' '.join(config.command)}")
-    main.run(config)
+    sys.exit(main.run(config))
 
 
 @main_cli.command(context_settings={"allow_interspersed_args": False})

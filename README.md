@@ -36,6 +36,7 @@ Some other ideas/desired features:
 * Quiet timeouts (no output/failure if not run due to timeout trying to get lock)
 * Config file (currently we support cli and env variables)
 * Redis Cluster support
+* Lock Namespacing
 
 
 ## Installation

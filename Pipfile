@@ -14,5 +14,6 @@ mock = "*"
 
 [packages]
 redis = ">=3.0.0"
+pottery = "*"
 
 [requires]

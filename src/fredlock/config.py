@@ -2,7 +2,10 @@
 Configuration
 """
 from dataclasses import dataclass, field, asdict
+from functools import lru_cache
 from typing import List
+
+import pottery as pottery
 
 REDIS_PREFIX = "redis_"
 
@@ -24,8 +27,8 @@ class Config:  # pylint: disable=R0902
 
     delay_after_acquire: int = 0
     delay_before_release: int = 0
-    auto_release_time: float = 1
-    wait_timeout: float = 5.0
+    auto_release_time: float = 60
+    wait_timeout: float = 60.0
 
     def configure(self):
         """ Compute/validate remaining configuration"""
@@ -56,3 +59,15 @@ class Config:  # pylint: disable=R0902
         return {key[len(REDIS_PREFIX):]: value
                 for key, value in asdict(self).items()
                 if key.startswith(REDIS_PREFIX)}
+
+    @property
+    def old_pottery(self):
+        """
+            Find out if we are using old pottery version
+
+            Version prior to 2.1 used time as int in milliseconds
+            newer versions use float in seconds
+        """
+        ver = pottery.__version__
+        major, minor, _ = ver.split('.', 3)
+        return major == '2' and minor == '0'

@@ -15,11 +15,17 @@ def execute(*command):
     """ Execute a command with args, return exit code"""
 
     with keyboard_interrupt_protection():
+        proc = None
         try:
             proc = subprocess.run(command)
 
         except Exception as ex:
-            log.warning("Got Exception: %s", ex)
-
-        log.info("Command exit status/return code: %s", proc.returncode)
-        return proc.returncode
+            log.error("Got Exception: %s", ex)
+        exitcode = proc.returncode if proc else -1
+        if exitcode == 0:
+            log.info("Command successfully completed")
+        elif exitcode != -1:
+            log.warning("Command exit status/return code: %s", exitcode)
+        else:
+            log.warning("Command failed to run")
+        return exitcode
