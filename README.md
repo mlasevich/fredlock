@@ -1,9 +1,9 @@
-[![Build Status](https://travis-ci.com/mlasevich/fredlock.svg?branch=main)](https://travis-ci.com/mlasevich/fredlock)
+[![Build Status](https://travis-ci.com/mlasevich/fredlock.svg?branch=main)](https://travis-ci.com/github/mlasevich/fredlock)
 [![Coverage Status](https://coveralls.io/repos/github/mlasevich/fredlock/badge.svg?branch=master)](https://coveralls.io/github/mlasevich/fredlock?branch=main)
 [![PyPI version](https://badge.fury.io/py/fredlock.svg)](https://badge.fury.io/py/fredlock)
 
-![FRedLock](docs/fredlock-logo-sm.png)
-# fredlock - Redis RedLock based distributed log tool 
+![fredlock](docs/fredlock-logo-sm.png)
+# fredlock - Redis RedLock based distributed locking tool 
 
 fredlock distributed locking utility
 
@@ -15,7 +15,7 @@ instances will be running at the same time.
 fredlock requires a shared Redis instance to provide locking
 
 
-## fredlock Release Notes
+## Release Notes
 
 * 0.1.0 - Initial version
   * Features
@@ -49,13 +49,13 @@ From PyPi:
 
 Full build-in usage is available with `--help` flag.
 
-### AutoNamed lock
+### Run command with automatically-generated name lock
 
 Simplest usage to run a command `command arg1 arg2` with lock _command_:
 
     fredlock run command arg1 arg2
 
-### With Specified Lock
+### Run command with a specified name lock
 
 Simplest usage to run a command `command arg1 arg2` with lock _lockname_:
 
