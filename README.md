@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/mlasevich/fredlock.svg?branch=main)](https://travis-ci.com/github/mlasevich/fredlock)
+[![Build Status](https://github.com/mlasevich/fredlock/actions/workflows/release.yml/badge.svg)](https://github.com/mlasevich/fredlock/actions/workflows/release.yml)
 [![Coverage Status](https://coveralls.io/repos/github/mlasevich/fredlock/badge.svg?branch=master)](https://coveralls.io/github/mlasevich/fredlock?branch=main)
 [![PyPI version](https://badge.fury.io/py/fredlock.svg)](https://badge.fury.io/py/fredlock)
 
