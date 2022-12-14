@@ -87,8 +87,8 @@ class FRedLock:
                 log.debug("Lock acquired!")
 
                 if conf.delay_after_acquire > 0:
-                    log.debug("Delaying %s seconds before running command",
-                              conf.delay_after_acquire)
+                    log.info("Delaying %s seconds before running command",
+                             conf.delay_after_acquire)
                     time.sleep(conf.delay_after_acquire)
 
                 log.info("Executing command: %s", " ".join(conf.command))
@@ -96,8 +96,8 @@ class FRedLock:
                 log.info("Finished Executing command.")
 
                 if conf.delay_before_release > 0:
-                    log.debug("Delaying %s seconds before releasing lock",
-                              conf.delay_before_release)
+                    log.info("Delaying %s seconds before releasing lock",
+                             conf.delay_before_release)
                     time.sleep(conf.delay_before_release)
                 return retcode
             finally:
