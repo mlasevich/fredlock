@@ -21,9 +21,9 @@ class Config:  # pylint: disable=R0902
     redis_host: str = 'localhost'
     redis_port: int = 6379
     redis_db: int = 0
-    redis_ssl: bool = False
+    #redis_ssl: bool = False
     redis_password: str = None
-    redis_unix_socket_path: str = None
+    #redis_unix_socket_path: str = None
 
     delay_after_acquire: int = 0
     delay_before_release: int = 0
