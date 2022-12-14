@@ -17,6 +17,8 @@ fredlock requires a shared Redis instance to provide locking
 
 ## Release Notes
 
+* 0.1.2 - No Changes
+
 * 0.1.1 - Bugfixes
   * Removed `--redis_ssl` and `--redis-unix-socket-path` command line options for now,
   not compatible with older redis clients
