@@ -32,7 +32,7 @@ jobs:
       #          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
       - name: Test with pytest
         run: |
-          python -m pytest --junitxml ./reports/results.xml --cov-config .coveragerc --cov=src
+          python -m pytest --junitxml ./reports/results.xml --cov-config .coveragerc --cov=src --cov-report lcov:./reports/lcov.info
       - name: Build Package
         #if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
         run: |
@@ -49,3 +49,4 @@ jobs:
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.COVERALLS_GITHUB_TOKEN }}
+          path-to-lcov: ./reports/lcov.info
