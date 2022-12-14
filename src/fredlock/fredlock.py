@@ -2,7 +2,7 @@
 Lock implementation
 """
 import logging
-from time import time
+import time
 from functools import lru_cache
 
 from redis import Redis

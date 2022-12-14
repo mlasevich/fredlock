@@ -49,15 +49,15 @@ pkg_logger = logging.getLogger('fredlock')
 @click.option('--redis-db', '-n', envvar='REDIS_DB', default=0,
               help="Redis database to connect to", type=int,
               **opt_args)
-@click.option('--redis-unix-socket-path', '-s', envvar='REDIS_UNIX_SOCKET_PATH',
-              default=None, help=" Server socket (overrides hostname and port).",
-              **opt_args)
+# @click.option('--redis-unix-socket-path', '-s', envvar='REDIS_UNIX_SOCKET_PATH',
+#               default=None, help=" Server socket (overrides hostname and port).",
+#               **opt_args)
 @click.option('--redis-password', '-s', envvar='REDIS_PASSWORD', default=None,
               help="Password to use when connecting to the server",
               **opt_args)
-@click.option('--redis-ssl/--no-redis-ssl', envvar='REDIS_SSL', default=False,
-              help="SSL Mode", type=bool,
-              **opt_args)
+# @click.option('--redis-ssl/--no-redis-ssl', envvar='REDIS_SSL', default=False,
+#               help="SSL Mode", type=bool,
+#               **opt_args)
 @click.option('--auto-release-time', default=300.0, type=float,
               help="Time after which to release the lock, even if not done",
               **opt_args)
